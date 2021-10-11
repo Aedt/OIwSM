@@ -1,7 +1,7 @@
-clear all;
+clearvars;
 close all;
 
-N = 60;
+N = input("Podaj zakres: ");
 Cp = 1:N;
 Cp(:) = 0;
 
@@ -17,7 +17,6 @@ for k = 1:N
 
         if z == 2
             Cp(i) = 1;
-            %         disp(i);
         end
 
     end
@@ -28,12 +27,12 @@ for k = 1:N
 end
 disp("Liczby pierwsze w podanym zakresie: ")
 disp(nnz(Cp));
-% pr = primes(N);
-% disp(length(pr));
+
 subplot(211);
 plot(Cp_N);
 xlabel("Zakres N");
 ylabel("Ilość liczb pierwszych");
+
 subplot(212);
 plot(Cp_t);
 xlabel("Zakres N");
